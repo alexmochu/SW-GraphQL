@@ -1,0 +1,27 @@
+{
+  "name": "SW-GraphQL",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "v12.20.0"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexmochu/SW-GraphQL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexmochu/SW-GraphQL/issues"
+  },
+  "homepage": "https://github.com/alexmochu/SW-GraphQL#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

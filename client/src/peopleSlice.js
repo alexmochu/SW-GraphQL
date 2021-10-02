@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 export const peopleSlice = createSlice({
   name: 'people',
@@ -6,16 +6,16 @@ export const peopleSlice = createSlice({
     value: 0
   },
   reducers: {
-    increase: state => {
-      state.value += 1
+    increase: (state) => {
+      state.value += 1;
     },
-    decrease: state => {
-      state.value -= 1
+    decrease: (state) => {
+      state.value -= 1;
     }
   }
-})
+});
 
 // each case under reducers becomes an action
-export const { increase, decrease } = peopleSlice.actions
+export const { increase, decrease } = peopleSlice.actions;
 
-export default peopleSlice.reducer
+export default peopleSlice.reducer;

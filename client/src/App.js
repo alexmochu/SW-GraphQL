@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 import styled from 'styled-components';
-
+import { People } from './People'
 
 const AppDiv = styled.div`
   text-align: center;
@@ -66,6 +66,7 @@ function Dashboard() {
     <AppDiv>
       <AppHeader>
         <p>{!data ? "Loading..." : data}</p>
+        <People/>
       </AppHeader>
     </AppDiv>
   );

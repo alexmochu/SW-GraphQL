@@ -7,7 +7,7 @@
     "node": "v12.20.0"
   },
   "scripts": {
-    "start": "node server/index.js",
+    "start": "nodemon --exec ts-node server/index.ts",
     "build": "cd client && npm install && npm run build"
   },
   "repository": {
@@ -22,7 +22,21 @@
   },
   "homepage": "https://github.com/alexmochu/SW-GraphQL#readme",
   "dependencies": {
+    "apollo-server-express": "^3.3.0",
+    "axios": "^0.22.0",
+    "class-validator": "^0.13.1",
     "express": "^4.17.1",
-    "react-router-dom": "^5.3.0"
+    "graphql": "^15.6.0",
+    "node-fetch": "^3.0.0",
+    "react-router-dom": "^5.3.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.2.1",
+    "type-graphql": "^1.1.1",
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.10.2",
+    "nodemon": "^2.0.13"
   }
 }

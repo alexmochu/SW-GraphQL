@@ -3,16 +3,16 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
-type Query {
-  getPagination(page: Float!): [Todo!]
-  getPeople: [Todo!]
-  getPerson(name: String!): [Todo!]
-}
-
-type Todo {
+type PersonSchema {
   gender: String!
   height: String!
   homeworld: String!
   mass: String!
   name: String!
+}
+
+type Query {
+  getPagination(page: Float!): [PersonSchema!]
+  getPeople: [PersonSchema!]
+  getPerson(name: String!): [PersonSchema!]
 }

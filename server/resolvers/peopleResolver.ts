@@ -23,7 +23,7 @@ const api= `https://swapi.dev`
 export class StarWarsResolver {
   private todos: PersonSchema[] = []
 
-  @Query((returns) => [Todo], { nullable: true })
+  @Query((returns) => [PersonSchema], { nullable: true })
   async getPeople(): Promise<PersonSchema[]> {
 
     const { results } = await axios.get<People>(`${api}/api/people/${''}`)

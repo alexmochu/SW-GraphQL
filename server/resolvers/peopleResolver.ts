@@ -26,7 +26,7 @@ export class StarWarsResolver {
   @Query((returns) => [PersonSchema], { nullable: true })
   async getPeople(): Promise<PersonSchema[]> {
 
-    const { results } = await axios.get<People>(`${api}/api/people/${''}`)
+    const { results } = await axios.get<People>(`${api}/api/people/?page=1`)
         .then(response => {
             return response.data
         });

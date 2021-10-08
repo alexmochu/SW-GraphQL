@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +9,8 @@ import {
   faUserFriends,
   faWeight
 } from '@fortawesome/free-solid-svg-icons';
+import { usePersonQuery } from './utilities';
+import { useParams } from 'react-router-dom';
 
 const Container = styled.div`
   background-color: #28223f;
@@ -101,7 +104,14 @@ const CardBody = styled.div`
   }
 `;
 
-export function PeopleDetail() {
+type Params = {
+  nameRoute: string;
+};
+
+const Person: React.FC = () => {
+  const { nameRoute } = useParams<Params>();
+  const { data } = usePersonQuery(nameRoute);
+
   return (
     <Container>
       <button>
@@ -119,15 +129,18 @@ export function PeopleDetail() {
             </CardPhoto>
           </CardHeader>
           <CardBody>
-            <h3>Beni Smith</h3>
+            <h3>{data?.getPerson[0].name}</h3>
             <p>
-              <FontAwesomeIcon icon={faArrowsAltV} /> Height | <FontAwesomeIcon icon={faWeight} />{' '}
-              Mass | <FontAwesomeIcon icon={faUserFriends} /> Gender |{' '}
-              <FontAwesomeIcon icon={faHome} /> Homeland
+              <FontAwesomeIcon icon={faArrowsAltV} /> {data?.getPerson[0].height} {'`'} |{' '}
+              <FontAwesomeIcon icon={faWeight} /> {data?.getPerson[0].mass} {' Kg '} |{' '}
+              <FontAwesomeIcon icon={faUserFriends} /> {data?.getPerson[0].gender} |{' '}
+              <FontAwesomeIcon icon={faHome} /> {data?.getPerson[0].homeworld}
             </p>
           </CardBody>
         </Card>
       </div>
     </Container>
   );
-}
+};
+
+export default Person;
